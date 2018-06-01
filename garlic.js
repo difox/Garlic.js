@@ -301,6 +301,11 @@
       this.$element.val( '' );
     }
 
+    /* remove all form data / reset state AND delete localStorage */
+    , cleanAll: function () {
+        this.storage.clean();
+    }
+    
     /* retuns an unique identifier for form elements, depending on their behaviors:
        * radio buttons: domain > pathname > form.<attr.name>[:eq(x)] > input.<attr.name>
           no eq(); must be all stored under the same field name inside the same form
